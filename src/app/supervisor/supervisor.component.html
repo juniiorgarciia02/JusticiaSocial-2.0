@@ -1,0 +1,64 @@
+<app-dashboard></app-dashboard>
+
+<!-- CONTENT -->
+<section id="content">
+
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <div>
+
+                    <h1>Supervisor: 
+                        
+                        <span *ngIf="this.accion == 1">
+                            Agregar
+                        </span>
+                        <span *ngIf="this.accion == 2">
+                            Editar
+                        </span>
+                    </h1>
+                </div>
+                <ul class="breadcrumb">
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active"  (click)="_ngAtras()">Atras</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <a href="#" class="btn-download">
+                <i class='bx bxs-cloud-download'></i>
+                <span class="text">Download PDF</span>
+            </a> -->
+        </div>
+    </main>
+
+    <div style="text-align: center;">
+        <h2 style="color: #3c91e6; text-decoration: underline;">Datos del Supervisor</h2>
+    </div>
+
+   
+    <div class="row" >
+        <div class="col-12">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-text"><strong>Nombre</strong></span>
+                        <input class="form-control"   [(ngModel)]="this.nombre" >
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-text"><strong>Telefono</strong></span>
+                        <input class="form-control"   [(ngModel)]="this.telefono">
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+</section>
+<!-- CONTENT -->

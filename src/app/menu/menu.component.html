@@ -1,0 +1,192 @@
+<app-dashboard></app-dashboard>
+
+
+
+<!-- CONTENT -->
+<section id="content">
+    
+
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <h1>Dashboard</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="#" class="btn-download">
+                <i class='bx bxs-cloud-download'></i>
+                <span class="text">Download PDF</span>
+            </a>
+        </div>
+
+
+        <!-- CARD SERVICES     START HERE -->
+
+        <ul class="box-info">
+
+            <li *ngFor="let services of this.servicesAdded" (click)="_goTo(services.name)">
+                <!-- <i class='bx bxs-calendar-check' ></i> -->
+                <img class='bx bxs-calendar-check' [src]="services.url" alt="">
+                <span class="text">
+                    <h3>{{services.name}}</h3>
+                    <p>{{services.numSell}}</p>
+                    
+                </span>
+                <div style="margin-top: -50px; text-align: end;">
+                    <i class='bx bx-filter' style="width: 25px;height: 25px;"></i>
+                </div>
+            </li>
+
+            <li *ngIf="this.verServiceAdd == 1">
+                <!-- <i class='bx bxs-calendar-check' ></i> -->
+                <div class="head-title">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar +
+                    </button>
+                </div>
+            </li>
+        </ul>
+
+        <!-- CARD SERVICES   END HERE -->
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar Servicios</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card mb-3" style="max-width: 540px;" *ngFor="let services of this.services">
+                            <div class="row g-0">
+                                <div class="col-3">
+                                    <img [src]="services.url" style="height: 80px;" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-9">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="margin-top: 10px;">{{services.name}}</h5>
+                                        <div style="text-align: end; margin-top: -35px;">   
+                                            <button type="button" class="btn btn-primary" (click)="_AgregarService(services)" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">Agregar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="table-data">
+            <div class="order">
+                <div class="head">
+                    <h3>Recent Orders</h3>
+                    <i class='bx bx-search'></i>
+                    <i class='bx bx-filter'></i>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Date Order</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img
+                                    src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+                                <p>John Doe</p>
+                            </td>
+                            <td>01-10-2023</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img
+                                    src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+                                <p>John Doe</p>
+                            </td>
+                            <td>01-10-2023</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img
+                                    src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+                                <p>John Doe</p>
+                            </td>
+                            <td>01-10-2023</td>
+                            <td><span class="status process">Process</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img
+                                    src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+                                <p>John Doe</p>
+                            </td>
+                            <td>01-10-2023</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img
+                                    src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+                                <p>John Doe</p>
+                            </td>
+                            <td>01-10-2023</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="todo">
+                <div class="head">
+                    <h3>Todos</h3>
+                    <i class='bx bx-plus'></i>
+                    <i class='bx bx-filter'></i>
+                </div>
+                <ul class="todo-list">
+                    <li class="completed">
+                        <p>Todo List</p>
+                        <i class='bx bx-dots-vertical-rounded'></i>
+                    </li>
+                    <li class="completed">
+                        <p>Todo List</p>
+                        <i class='bx bx-dots-vertical-rounded'></i>
+                    </li>
+                    <li class="not-completed">
+                        <p>Todo List</p>
+                        <i class='bx bx-dots-vertical-rounded'></i>
+                    </li>
+                    <li class="completed">
+                        <p>Todo List</p>
+                        <i class='bx bx-dots-vertical-rounded'></i>
+                    </li>
+                    <li class="not-completed">
+                        <p>Todo List</p>
+                        <i class='bx bx-dots-vertical-rounded'></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!-- MAIN -->
+</section>
+<!-- CONTENT -->

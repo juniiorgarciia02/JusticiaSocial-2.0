@@ -1,0 +1,60 @@
+<style>
+    #content {
+        position: relative;
+
+        width: 100%;
+        left: 0px;
+        transition: 0.3s ease;
+    }
+
+    li:hover {
+        cursor: pointer;
+    }
+</style>
+
+<!-- CONTENT -->
+<section id="content">
+
+
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <h1>PROVINCIAS</h1>
+                <ul class="breadcrumb">
+
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="table-data">
+
+            <div class="todo">
+                <div class="head">
+                    <h3>SELECCIONAR PROVINCIA</h3>
+                    <i class='bx bx-plus'></i>
+                    <i class='bx bx-filter'></i>
+                </div>
+                <ul class="todo-list" *ngFor="let item of provincias" (click)="_irMenu(item)">
+                    <li class="completed ">
+                        <p>{{item.decripcion | uppercase}}</p>
+                        <i class='bx bx-dots-vertical-rounded'></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!-- MAIN -->
+</section>
+<!-- CONTENT -->
+
+<script>
+    var element = document.getElementById("content");
+    element.classList.remove("content");
+
+
+</script>

@@ -1,0 +1,98 @@
+<app-dashboard></app-dashboard>
+
+<!-- CONTENT -->
+<section id="content">
+
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <div>
+
+                    <h1>Paqueticos: <span>Paso 2</span></h1>
+                </div>
+                <ul class="breadcrumb">
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="paqueticos">Paqueticos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-2">
+
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-3">
+                        <img [src]="this.getItemsSelect[0].url" style="width: 100%;">
+                    </div>
+
+                    <div class="col-3" *ngFor="let item of numberName" style="text-align: center;"
+                        (click)="this._numerSelect(item)">
+                        <button class="btn btn-primary"> {{item.name}}</button>
+                    </div>
+
+                    <div>
+                        <br>
+                        <div class="input-group">
+                            <span class="input-group-text">{{this.numberSelect}}</span>
+                            <input class="form-control" aria-label="With textarea" #yourControlName [(ngModel)]="this.referencia">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-2">
+
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-success" type="button" (click)="_sendPost()">Consultar Planes</button>
+            </div>
+
+            <div class="col-12" style="margin-top: 15px;">
+                <div class="row">
+                    <div class="col-6">   
+                        <div class="card" style="margin-top: 5px;">
+                            <div class="card-body">
+                            150 MB  CHAT Y REDES 1 DIA $40
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-6">   
+                        <div class="card" style="margin-top: 5px;">
+                            <div class="card-body">
+                                300 MB CHAT Y REDES 7 DIAS $75
+                            </div>
+                          </div>
+                    </div>
+                   
+                    <div class="col-6" style="margin-top: 5px;">   
+                        <div class="card">
+                            <div class="card-body">
+                            150 MB  CHAT Y REDES 1 DIA $40
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-6" style="margin-top: 5px;">   
+                        <div class="card">
+                            <div class="card-body">
+                                300 MB CHAT Y REDES 7 DIAS $75
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- MAIN -->
+</section>
+<!-- CONTENT -->

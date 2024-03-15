@@ -1,0 +1,96 @@
+<app-dashboard></app-dashboard>
+
+<!-- CONTENT -->
+<section id="content">
+
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <div>
+                    <h1>Gift Card: Compra </h1>
+                </div>
+                <ul class="breadcrumb">
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <a href="#" class="btn-download">
+                <i class='bx bxs-cloud-download'></i>
+                <span class="text">Download PDF</span>
+            </a> -->
+        </div>
+    </main>
+
+    <div style="align-items:center;">
+        
+        <div class="row">
+            <div class="col-12" *ngFor="let services of this.services" >
+                <div class="card h-100" style="align-items:center;">
+                    <img [src]="services.url" class="card-img-top" style="width: 125px;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{services.name}}</h5>
+                        <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center;color: blue;">
+        <h2><b>Seleccionar</b></h2>
+    </div>
+
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <div class="row ">
+                    <div class="col-6" *ngFor="let services of this.seleccionar"   data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="_seleccionarService(services)">
+                        <div class="card h-100" style="align-items:center;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{services.name}}</h5>
+                                <p class="card-text">RD ${{services.price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Producto:  {{this.producto}}
+          <br> 
+          Monto: {{this.monto}}
+          <br>
+          Cargo por Serv:{{this.cargoServ}}
+          <br>
+          Total pagar:{{this.total}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
+          <button type="button" class="btn btn-primary">ACEPTAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- MAIN -->
+</section>
+<!-- CONTENT -->

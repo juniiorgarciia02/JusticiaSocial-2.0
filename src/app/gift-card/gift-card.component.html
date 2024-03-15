@@ -1,0 +1,62 @@
+<app-dashboard></app-dashboard>
+
+<!-- CONTENT -->
+<section id="content">
+
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <div>
+
+                    <h1>Gift Card: </h1>
+                </div>
+                <ul class="breadcrumb">
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <a href="#" class="btn-download">
+                <i class='bx bxs-cloud-download'></i>
+                <span class="text">Download PDF</span>
+            </a> -->
+        </div>
+    </main>
+
+    <div style="text-align: center;">
+        <h2 style="color: #3c91e6"><b>Seleccionar Compañia</b></h2>
+    </div>
+
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col" *ngFor="let services of this.services" (click)="_seleccionarService(services)">
+                      <div class="card h-100"  style="align-items:center;">
+                        <img [src]="services.url" class="card-img-top"  style="width: 125px;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{services.name}}</h5>
+                          <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+
+        <div class="col-2">
+
+        </div>
+
+    </div>
+
+    
+    <!-- MAIN -->
+</section>
+<!-- CONTENT -->

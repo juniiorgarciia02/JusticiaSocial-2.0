@@ -1,0 +1,76 @@
+<app-dashboard></app-dashboard>
+
+<!-- CONTENT -->
+<section id="content">
+
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <div>
+
+                    <h1>RECARGAS: <span>Paso 2</span></h1>
+                </div>
+                <ul class="breadcrumb">
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="recargas">Recargas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-2">
+
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-3">
+                        <img [src]="this.getItemsSelect[0].url" style="width: 100%;">
+                    </div>
+
+                    <div class="col-3" *ngFor="let item of numberName" style="text-align: center;"  (click)="this._numerSelect(item)">
+                        <button class="btn btn-primary" style="background-color: #3c91e6;"> {{item.name}}</button>
+                    </div>
+
+                    <div>
+                        <br>
+                        <div class="input-group">
+                            <span class="input-group-text">{{this.numberSelect}}</span>
+                            <input class="form-control" aria-label="With textarea" #yourControlName [(ngModel)]="this.referencia">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-2">
+
+            </div>
+        </div>
+        <br><br>
+
+        <div class="row">
+            <div class="col-12" style="text-align: center;color: #3c91e6">
+                <h2> Monto de recarga</h2>
+            </div>
+            <div class="col-3" *ngFor="let item of montoRecarga" style="text-align: center;"
+                (click)="this._recargaSelect(item)">
+                <button class="btn btn-primary"> {{item.name}}</button>
+            </div>
+            <br><br>
+            <div class="col-12">
+                <div class="input-group">
+                    <input class="form-control" aria-label="With textarea" [(ngModel)]="this.recargaSelect">
+                </div>
+            </div>
+            <br><br><br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-success" type="button" (click)="_sendPost()">Recargas</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- MAIN -->
+</section>
+<!-- CONTENT -->

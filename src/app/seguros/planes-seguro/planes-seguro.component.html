@@ -1,0 +1,52 @@
+<app-dashboard></app-dashboard>
+
+<!-- CONTENT -->
+<section id="content">
+
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <div>
+
+                    <h1>Seguros: Precios</h1>
+                </div>
+                <ul class="breadcrumb">
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="#">Home</a>
+                    </li>
+                    <li>
+                        <a class="active" href="/seguros">Seguros</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <div class="card" *ngFor="let item of this.planesSeguros" (click)="_SelectPrecio(item)">
+        <div class="row">
+            <div class="col-1">
+                <img src="../../../assets/img/sheet.png" alt="..." style="border-radius: 50px;width: 80px;">
+            </div>
+            <div class="col-9">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: blue;"><b>Plan 1 - 3 Meses </b></h5>
+                    <p class="card-text">
+                        {{item.tipoVeh}}
+                    </p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: blue;">Costo </h5>
+                    <p class="card-text">
+                        {{item.precio}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- CONTENT -->

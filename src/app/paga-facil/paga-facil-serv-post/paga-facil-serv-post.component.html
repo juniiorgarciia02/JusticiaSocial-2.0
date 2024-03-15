@@ -1,0 +1,107 @@
+<app-dashboard></app-dashboard>
+
+
+<!-- CONTENT -->
+<section id="content">
+
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <div>
+
+                    <h1>Paga Fácil: <span>Paso 2</span></h1>
+                </div>
+                <ul class="breadcrumb">
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="pagaFacilServ">Paga Fácil</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-2">
+
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-3">
+                        <img [src]="this.getItemsSelect[0].url" style="width: 100%;">
+                    </div>
+
+                    <div class="col-9" style="text-align: center;">
+
+                        <br><br><br><br><br>
+                        <b>Contrato/ Número /Referencia</b>
+                        <div class="input-group">
+                            <input class="form-control" aria-label="With textarea" #yourControlName
+                                [(ngModel)]="this.referencia">
+                        </div>
+                    </div>  
+                     
+                </div>
+            </div>
+            <div class="col-2">
+
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-success" type="button" (click)="_sendPost()">Consultar </button>
+            </div>
+
+            <div class="col-12" style="margin-top: 15px;">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card" style="margin-top: 5px;">
+                            <div class="card-body">
+                                <b> Nombre: </b>{{this.nombre}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card" style="margin-top: 5px;">
+                            <div class="card-body">
+                                <b>Apellido: </b>{{this.apellido}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12" style="margin-top: 5px;">
+                        <div class="card">
+                            <div class="card-body">
+                                <b>Direccion: </b>{{ this.direccion}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6" style="margin-top: 5px;">
+                        <div class="card">
+                            <div class="card-body">
+                                <b>Provincia: </b>{{this.provincia}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6" style="margin-top: 5px;">
+                        <div class="card">
+                            <div class="card-body">
+                                <b>Total a pagar: </b>{{this.total}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <br><br><br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="button" (click)="_sendPost()">Pagar Total</button>
+            </div>
+    </main>
+
+    <!-- MAIN -->
+</section>
+<!-- CONTENT -->

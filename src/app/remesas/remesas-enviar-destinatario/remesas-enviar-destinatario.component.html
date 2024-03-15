@@ -1,0 +1,115 @@
+<app-dashboard></app-dashboard>
+
+<!-- CONTENT -->
+<section id="content">
+
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <div>
+
+                    <h1>Enviar Remesas: 2/2 </h1>
+                </div>
+                <ul class="breadcrumb">
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="#">Home</a>
+                    </li>
+                    <li>
+                        <a class="active" href="/remesas">Remesas</a>
+                    </li>
+                    <li>
+                        <a class="active" href="/enviarRemesa">Enviar Remesa</a>
+                    </li>
+
+                    
+                </ul>
+            </div>
+            <!-- <a href="#" class="btn-download">
+                <i class='bx bxs-cloud-download'></i>
+                <span class="text">Download PDF</span>
+            </a> -->
+        </div>
+    </main>
+
+    <div style="text-align: center;">
+        <h2 style="color: blue;"><b>DESTINATARIO</b></h2>
+        <span>Información de quien recibe</span>
+        <hr>
+    </div>
+
+    <!-- CARD SERVICES     START HERE -->
+
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+
+        <div class="col-8">
+
+            <div class="row">
+                <div class="input-group">
+
+
+                    <div class="col-6" style="margin-top: 10px;">
+                        <b>Documento:</b>
+                        <input class="form-control" placeholder="CHASIS1122765">
+                    </div>
+
+                    <div class="col-6" style="margin-top: 10px;">
+                        <b>Teléfono:</b>
+                        <input class="form-control" placeholder="CHASIS1122765">
+                    </div>
+
+                    <div class="col-6" style="margin-top: 10px;">
+                        <b>Nombres:</b>
+                        <input class="form-control" placeholder="CHASIS1122765">
+                    </div>
+
+                    <div class="col-6" style="margin-top: 10px;">
+                        <b>Apellidos:</b>
+                        <input class="form-control" placeholder="CHASIS1122765">
+                    </div>
+
+                    <div class="col-6" style="margin-top: 10px;">
+                        <b>Fecha Nacimiento:</b>
+                        <input class="form-control" placeholder="CHASIS1122765">
+                    </div>
+
+                    <div class="col-6" style="margin-top: 10px;">
+                        <b>Pais de Nacimiento:</b>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Seleccionar Pais</option>
+                            <option *ngFor="let item of this.paisNacSeleccionar" [value]="item.id">{{item.name}}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12" style="margin-top: 10px;">
+                        <b>Monto:</b>
+                        <input class="form-control" placeholder="CHASIS1122765">
+                    </div>
+
+                    <div class="col-12" style="margin-top: 10px;">
+                        <b>HTG:</b>
+                        <input class="form-control" placeholder="CHASIS1122765">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-2">
+
+        </div>
+
+        <button class="btn btn-success" type="button" style="margin-top: 25px;" (click)="_siguientePage()">Siguiente</button>
+    </div>
+
+    <!-- CARD SERVICES   END HERE -->
+
+
+    <!-- MAIN -->
+</section>
+<!-- CONTENT -->
