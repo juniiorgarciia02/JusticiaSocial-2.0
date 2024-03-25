@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+// Import logger script 
+import * as logger from "../scripts/logger.js";
 
 @Component({
   selector: 'app-root',

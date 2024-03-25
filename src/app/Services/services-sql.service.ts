@@ -26,6 +26,10 @@ export class ServicesSqlService {
     return this.http.post(this.Url+'buscarDetalleSupervisor.php', {ID:id});
   }
 
+  getMunicipios(id?: string) {
+    return this.http.post(this.Url+'buscarMunicipios.php', {ID:id});
+  }
+
   
 }
           

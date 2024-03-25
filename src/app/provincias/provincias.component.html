@@ -41,7 +41,7 @@
                 </div>
                 <ul class="todo-list" *ngFor="let item of provincias" (click)="_irMenu(item)">
                     <li class="completed ">
-                        <p>{{item.decripcion | uppercase}}</p>
+                       <b> <p>{{item.decripcion | uppercase}}</p></b>
                         <i class='bx bx-dots-vertical-rounded'></i>
                     </li>
                 </ul>

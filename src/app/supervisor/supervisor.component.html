@@ -9,8 +9,8 @@
             <div class="left">
                 <div>
 
-                    <h1>Supervisor: 
-                        
+                    <h1>Supervisor:
+
                         <span *ngIf="this.accion == 1">
                             Agregar
                         </span>
@@ -22,7 +22,7 @@
                 <ul class="breadcrumb">
                     <li><i class='bx bx-chevron-right'></i></li>
                     <li>
-                        <a class="active"  (click)="_ngAtras()">Atras</a>
+                        <a class="active" (click)="_ngAtras()">Atras</a>
                     </li>
                 </ul>
             </div>
@@ -34,11 +34,11 @@
     </main>
 
     <div style="text-align: center;">
-        <h2 style="color: #3c91e6; text-decoration: underline;">Datos del Supervisor</h2>
+        <h2 style="color: #3c91e6; text-decoration: underline;"><strong> Datos del Supervisor</strong> </h2>
     </div>
 
-   
-    <div class="row" >
+
+    <div class="row">
         <div class="col-12">
             <div class="row">
                 <div class="col-2"></div>
@@ -46,19 +46,57 @@
                     <br>
                     <div class="input-group">
                         <span class="input-group-text"><strong>Nombre</strong></span>
-                        <input class="form-control"   [(ngModel)]="this.nombre" >
+                        <input class="form-control" id="nombre"  [(ngModel)]="this.nombre">
                     </div>
                     <br>
                     <div class="input-group">
                         <span class="input-group-text"><strong>Telefono</strong></span>
-                        <input class="form-control"   [(ngModel)]="this.telefono">
+                        <input class="form-control" id="phone" placeholder="(829) 000-0000" maxlength="12"
+                            [(ngModel)]="this.telefono">
                     </div>
-                  
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-text"><strong>Municipio</strong></span>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                            (change)="selectOption($event.target)">
+                            <option selected> -- Seleccionar un Municipio --</option>
+                            <option *ngFor="let item of this.municipios" value="{{item.id_muni}}">{{item.descripcion}}
+                            </option>
+
+                        </select>
+                    </div>
                 </div>
             </div>
+            <br>
+            <br>
+
+            <span *ngIf="this.accion == 1">
+
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button" (click)="_AddSupervisor()">AGREGAR</button>
+                </div>
+            </span>
+            <span *ngIf="this.accion == 2">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button" (click)="_AddSupervisor()">EDITAR</button>
+                </div>
+            </span>
+
+
         </div>
     </div>
     <br><br>
-
+  
 </section>
 <!-- CONTENT -->
+<script>
+    console.log('hola')
+        //     document.getElementById("nombre").focus();
+    
+    
+        // document.getElementById('phone').addEventListener('input', function (e) {
+        //     var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        //     e.target.value = '(' + x[1] + ') ' + x[2] + '-' + x[3]
+        // });
+    </script>
+
